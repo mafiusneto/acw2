@@ -18,7 +18,7 @@ public class Candidatura extends AbstractEntity{
 	
 	private Long id_cidade;
 	
-	private Long id_politicos;
+	private Long id_politico;
 	
 	@Column(length=4)
 	private String ano;
