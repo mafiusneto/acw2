@@ -22,6 +22,10 @@ public class PoliticoService extends AbstractService<Politico>{
 		return (Politico) repository.findOne(id);
 	}
 	
+	public Politico getByNome(String nome){
+		return (Politico) repository.findByNome(nome);
+	}
+	
 	public Long save(Politico politico){
 		Politico obj = null;
 		obj = repository.save(politico);

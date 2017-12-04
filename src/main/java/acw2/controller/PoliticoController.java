@@ -51,7 +51,16 @@ public class PoliticoController {
 	
 	@GetMapping(value="/{id}", produces="application/json")
 	public @ResponseBody Politico getById(@PathVariable long id) {
+		System.out.println("getById");
 		Politico politico = service.getById(id);
 		return politico;
 	}
+	/*
+	@GetMapping(value="/{nome}", produces="application/json")
+	public @ResponseBody Politico getByNome(@PathVariable String nome) {
+		System.out.println("getByNome");
+		Politico politico = service.getByNome(nome);
+		return politico;
+	}
+	*/
 }
