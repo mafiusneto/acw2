@@ -36,6 +36,15 @@ public class PoliticoController {
 	
 	@PutMapping()
 	public Long alterarPolitico(@RequestBody @Valid Politico politico) {
+		if (politico.getId() == 0){
+			return 0L;
+		}else{
+			Politico p = service.getById(politico.getId());
+			if (p == null){
+				return 0L;
+			}
+		}
+		
 		return service.save(politico);
 	}
 	
@@ -48,19 +57,19 @@ public class PoliticoController {
 			return 0L;
 		}
 	}
-	
+	/*
 	@GetMapping(value="/{id}", produces="application/json")
 	public @ResponseBody Politico getById(@PathVariable long id) {
 		System.out.println("getById");
 		Politico politico = service.getById(id);
 		return politico;
 	}
-	/*
-	@GetMapping(value="/{nome}", produces="application/json")
-	public @ResponseBody Politico getByNome(@PathVariable String nome) {
-		System.out.println("getByNome");
-		Politico politico = service.getByNome(nome);
-		return politico;
-	}
 	*/
+	@GetMapping(value="/{nome}", produces="application/json")
+	public @ResponseBody Iterable<Politico> getByNome(@PathVariable String nome) {
+		//System.out.println("getByNome");
+		Iterable<Politico> politicos = service.getByNome(nome);
+		return politicos;
+	}
+	
 }
