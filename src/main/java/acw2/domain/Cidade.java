@@ -1,6 +1,5 @@
 package acw2.domain;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,12 +15,17 @@ public class Cidade extends AbstractEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	private String cidade;
+	private Long geonameId;
 	
-	private Long habitantes;
+	private String name;
 	
-	private String estado;
+	private Long population;
 	
-	@Column(length=2)
-	private String uf;
+	private String adminName1; //Paraíba
+	
+	private String countryName; //Brazil
+	
+	private String lng;
+	
+	private String lat;
 }
