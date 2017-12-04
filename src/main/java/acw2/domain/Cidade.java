@@ -18,7 +18,7 @@ public class Cidade extends AbstractEntity {
 	
 	private String cidade;
 	
-	private String habitantes;
+	private Long habitantes;
 	
 	private String estado;
 	

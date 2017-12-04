@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import acw2.domain.Cidade;
+import acw2.domain.Politico;
 import acw2.service.CidadeService;
 
 @RestController
@@ -61,5 +62,10 @@ public class CidadeController {
 	public @ResponseBody Cidade getById(@PathVariable long id) {
 		Cidade cidade = service.getById(id);
 		return cidade;
+	}
+	
+	@RequestMapping("consumir")
+	public @ResponseBody Iterable<Cidade> consumir(){
+		return service.consumirCidades();
 	}
 }
